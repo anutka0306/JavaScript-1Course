@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+   <html>
+       <head>
+          <title>Конвертер Цельсий-Фаренгейт</title> 
+          <link rel="stylesheet" href="style.css" type="text/css">
+       </head>
+       <body>
+          <div class="btn-block">
+           <button class="converter" onClick="converter()">Перевести Целсий в Фаренгейт</button>
+           </div>
+           <script>
+                function converter(){
+                  let temperatureSelsy =  prompt("Укажи заначение градусов в Цельсиях",'');
+                    if(temperatureSelsy == null || temperatureSelsy == ''){
+                        alert("Вы не ввели температуру!");
+                    }
+                    else if (isNaN(Number(temperatureSelsy))){
+                        alert("Вы ввели нечто отличающееся от числа! Для корректного преобразования необходимо ввести только число!");
+                    }
+                    else{
+                        let temperatureFar = (9/5) * temperatureSelsy +32;
+                        alert("Температура по Фаренгейту составит: " + temperatureFar);
+                    }
+                }
+               
+           </script>
+       </body>
+   </html>
+    

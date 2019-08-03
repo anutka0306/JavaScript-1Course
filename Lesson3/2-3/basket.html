@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basket Counter</title>
+</head>
+<body>
+<script>
+    const cart = [new Item("TV", 200, 2), new Item("Doll", 100, 3)];
+
+    function Item(name, price, quantity) {
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
+    
+    function countBasketPrice(cart) {
+        let result = 0;
+        for(let i = 0; i < cart.length; i++){
+            result += cart[i].price * cart[i].quantity;
+        }
+        return result;
+    }
+
+    console.log('Total: '+ countBasketPrice(cart));
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4 Functions</title>
+</head>
+<body>
+<form>
+   Первое число: <input type="number" size="10" id="a_num"> <br>
+    <input type="radio" name = "action" value="sum">+<br>
+    <input type="radio" name = "action" value="diff">-<br>
+    <input type="radio" name = "action" value="mult">*<br>
+    <input type="radio" name = "action" value="divide">/<br>
+    Второе число: <input type="number" size="10" id="b_num"> <br>
+    <button onclick="getResult()">Посчитать</button>
+</form>
+<script>
+    function getResult() {
+        let a = document.getElementById("a_num").value;
+        let b = document.getElementById("b_num").value;
+        let action = document.querySelector('input[type=radio]:checked').value;
+
+        switch (action) {
+            case 'sum':
+                alert(sumOfTwo(+a, +b));
+                break;
+
+            case 'diff':
+                alert(diffOfTwo(+a, +b));
+                break;
+            case 'mult':
+                alert(multOfTwo(+a, +b));
+                break;
+            case 'divide':
+                alert(divideOfTwo(+a, +b));
+                break;
+            default:
+                alert("Что-то пошло не так");
+        }
+    }
+
+    function sumOfTwo(a,b) {
+        return a + b;
+    }
+
+    function diffOfTwo(a,b) {
+        return a - b;
+    }
+
+    function multOfTwo(a,b) {
+        return a * b;
+    }
+
+    function divideOfTwo(a,b) {
+        return a / b;
+    }
+
+
+</script>
+
+
+</body>
+</html>

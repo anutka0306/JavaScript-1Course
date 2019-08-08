@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recursia</title>
+</head>
+<body>
+<script>
+    function power(val, pow) {
+        if(pow != 1){
+            return val * power(val, pow-1);
+        }
+        else{
+            return val;
+        }
+    }
+</script>
+</body>
+</html>

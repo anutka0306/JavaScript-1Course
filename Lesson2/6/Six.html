@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4 Functions</title>
+</head>
+<body>
+
+<script>
+    function mathOperation(arg1, arg2, operation) {
+
+        switch (operation) {
+            case '+':
+                alert(sumOfTwo(arg1, arg2));
+                break;
+
+            case '-':
+                alert(diffOfTwo(arg1, arg2));
+                break;
+            case '*':
+                alert(multOfTwo(arg1, arg2));
+                break;
+            case '/':
+                alert(divideOfTwo(arg1, arg2));
+                break;
+            default:
+                alert("Что-то пошло не так");
+        }
+    }
+
+    function sumOfTwo(a,b) {
+        return a + b;
+    }
+
+    function diffOfTwo(a,b) {
+        return a - b;
+    }
+
+    function multOfTwo(a,b) {
+        return a * b;
+    }
+
+    function divideOfTwo(a,b) {
+        return a / b;
+    }
+
+
+</script>
+
+
+</body>
+</html>

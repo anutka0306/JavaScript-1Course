@@ -19,6 +19,6 @@
 .board__col_black {
     width: 60px;
     height: 60px;
-    background-color: black;
+    background-color: grey;
     color: aliceblue;
 }

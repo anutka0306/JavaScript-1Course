@@ -1,0 +1,42 @@
+body{
+    background-color: black;
+}
+h1, h3{
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+h1{
+    font-size: 36px;
+}
+h3{
+    font-size: 20px;
+}
+h3 i{
+    display: block;
+    font-style: normal;
+}
+.field{
+    width: 400px;
+    border: 1px solid white;
+    height: 40px;
+    margin: 0 auto;
+}
+.row{
+    height: 20px;
+    display: flex;
+    border: 1px solid white;
+}
+.cell{
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border: 1px solid white;
+
+}
+.snake-cell{
+    background-color: greenyellow;
+    width: 20px;
+    height: 20px;
+}

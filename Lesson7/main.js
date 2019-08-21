@@ -3,6 +3,7 @@ const SNAKE_SPEED = 300;
 const game = {
     snake: null,
     interval: null,
+    obstacleInterval: null,
     fields: null,
     points: 0,
 };
@@ -89,6 +90,7 @@ function startGame() {
     points.textContent = game.points;
 
     spawnFood(FIELD_SIZE);
+    game.obstacleInterval = setInterval(getObstacle, 5000);
     game.interval = setInterval(snakeMotion, SNAKE_SPEED);
 }
 
@@ -99,6 +101,24 @@ function spawnFood(size) {
     } while (food.classList.contains('snake-cell'));
     food.eat = true;
     food.style.background = 'white';
+}
+function getObstacle() {
+    spawnObstacle(FIELD_SIZE);
+}
+function spawnObstacle(size) {
+    let obstacle;
+    let currentObstacle = document.querySelector('.obstacle');
+    if(currentObstacle){
+        currentObstacle.exist = false;
+        currentObstacle.classList.remove('obstacle');
+    }
+
+    do{
+        obstacle = game.fields.children[Math.floor(Math.random() * size)].children[Math.floor(Math.random() * size)];
+    }while (obstacle.classList.contains('snake-cell'));
+    obstacle.exist = true;
+    obstacle.classList.add('obstacle');
+    
 }
 
 function changeDirection(event) {
@@ -132,6 +152,11 @@ function snakeMotion() {
     if(nextCell && !nextCell.classList.contains('snake-cell')){
         nextCell.direction = game.snake.direction;
         nextCell.tail = game.snake;
+        if(nextCell.exist){
+            console.log('Вы проиграли');
+            clearInterval(game.interval);
+            clearInterval(game.obstacleInterval);
+        }
         if(nextCell.eat){
             spawnFood(FIELD_SIZE);
             game.points = game.points + 1;
@@ -152,7 +177,10 @@ function snakeMotion() {
         game.snake = nextCell;
         game.snake.className = 'snake-cell';
         currentCell.style.backgroundColor = '';
-    }else{
+    }
+
+
+    else{
         console.log('Вы проиграли');
         clearInterval(game.interval);
     }
